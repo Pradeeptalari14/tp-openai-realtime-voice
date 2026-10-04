@@ -1,0 +1,24 @@
+{
+  "tools": [
+    {
+      "type": "function",
+      "name": "query_cloud_telemetry",
+      "description": "Look up real-time Kubernetes cluster error rates and pod crash counts.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string",
+            "description": "Target Kubernetes namespace"
+          },
+          "metric_window": {
+            "type": "string",
+            "enum": ["5m", "15m", "1h"],
+            "description": "Telemetry query window"
+          }
+        },
+        "required": ["namespace"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: realtime-voice-gateway
+  namespace: voice-workloads
+  labels:
+    app.kubernetes.io/name: realtime-voice-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: realtime-voice-gateway
+  template:
+    metadata:
+      labels:
+        app: realtime-voice-gateway
+    spec:
+      containers:
+        - name: gateway-server
+          image: ghcr.io/pradeeptalari14/realtime-voice-gateway:latest
+          ports:
+            - containerPort: 3000
+              name: http
+            - containerPort: 10000
+              protocol: UDP
+              name: rtc-media
+          env:
+            - name: REALTIME_VOICE
+              value: "alloy"
+            - name: REALTIME_TRANSPORT
+              value: "webrtc"
+          resources:
+            requests:
+              cpu: "1000m"
+              memory: "1Gi"
+            limits:
+              cpu: "2000m"
+              memory: "2Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: realtime-voice-gateway-svc
+  namespace: voice-workloads
+spec:
+  selector:
+    app: realtime-voice-gateway
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      name: http
+    - protocol: UDP
+      port: 10000
+      targetPort: 10000
+      name: rtc-media
