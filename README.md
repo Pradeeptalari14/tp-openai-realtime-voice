@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # 🎙️ OpenAI Realtime WebRTC Voice & Multimodal Agent Studio
 
 [![OpenAI Realtime CI](https://github.com/Pradeeptalari14/tp-openai-realtime-voice/actions/workflows/realtime-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-openai-realtime-voice/actions)
@@ -189,3 +192,6 @@ tp-openai-realtime-voice/
 
 - **License:** [MIT License](LICENSE)
 - **Attribution:** Maintained by **[Talari Pradeep](https://talaripradeep.info/)** · AI Infrastructure & Platform SRE Lead
+
+---
+*Synchronized with [OpenAI Realtime WebRTC Voice Studio Studio](https://pradeeptalari.me/tools/openai-realtime-voice/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
